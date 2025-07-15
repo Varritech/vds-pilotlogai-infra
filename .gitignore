@@ -1,0 +1,39 @@
+# Terraform state
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars.backup
+.terraform/
+.terraform.lock.hcl
+
+# Sensitive variable files
+*.tfvars
+!environments/**/terraform.tfvars
+!bootstrap/terraform.tfvars
+
+# Local overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Editor/OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Mac system files
+.AppleDouble
+.LSOverride
+
+# Node/npm (if any JS functions)
+node_modules/
+
+# Python virtualenv (if any)
+venv/
+.env 
