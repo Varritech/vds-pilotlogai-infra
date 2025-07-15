@@ -18,4 +18,14 @@ resource "google_cloudfunctions2_function" "this" {
     service_account_email = var.service_account_email
     vpc_connector        = var.vpc_connector != "" ? var.vpc_connector : null
   }
+}
+
+resource "google_cloud_run_service_iam_member" "invoker" {
+  for_each = toset(var.function_names)
+  location = var.region
+  project  = var.project_id
+  service  = lower(google_cloudfunctions2_function.this[each.key].name)
+  role     = "roles/run.invoker"
+  member   = "allUsers"
+  depends_on = [google_cloudfunctions2_function.this]
 } 
