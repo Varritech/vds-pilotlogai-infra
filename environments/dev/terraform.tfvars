@@ -11,5 +11,5 @@ function_entry_points   = {
 function_runtime        = "nodejs20"
 functions_source_bucket = "my-firebase-dev-functions"
 functions_source_object = "functions.zip"
-cloud_functions_sa      = "my-firebase-dev@appspot.gserviceaccount.com"
+cloud_functions_sa      = "pilotlogai-cloud-api@pilotlogai.iam.gserviceaccount.com"
 vpc_connector           = "" 

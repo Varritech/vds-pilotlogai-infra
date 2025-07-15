@@ -33,8 +33,9 @@ variable "source_object" {
   type        = string
 }
 
+# The service account email to be used by Cloud Functions at runtime.
 variable "service_account_email" {
-  description = "Service account email for Cloud Functions."
+  description = "Service account email for Cloud Functions runtime."
   type        = string
 }
 
