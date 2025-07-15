@@ -1,15 +1,12 @@
-project_id              = "my-firebase-dev"
+project_id              = "pilotlogai"
 location                = "us"
 region                  = "us-central1"
 artifact_registry_name  = "gcf-artifacts"
 artifact_registry_format = "docker"
-function_names          = ["helloWorld", "sendEmail"]
-function_entry_points   = {
-  helloWorld = "helloWorld"
-  sendEmail  = "sendEmail"
-}
-function_runtime        = "nodejs20"
-functions_source_bucket = "my-firebase-dev-functions"
-functions_source_object = "functions.zip"
-cloud_functions_sa      = "pilotlogai-cloud-api@pilotlogai.iam.gserviceaccount.com"
-vpc_connector           = "" 
+function_names          = ["api", "myFunction"]
+function_entry_points   = { api = "api", myFunction = "myFunction" }
+function_runtime        = "nodejs22"
+functions_source_bucket = "pilotlogai-functions-source"
+functions_source_object = "source.zip"
+cloud_functions_sa      = "395510094695-compute@developer.gserviceaccount.com"
+vpc_connector           = ""

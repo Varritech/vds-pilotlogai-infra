@@ -30,7 +30,7 @@ resource "google_project_iam_member" "cloud_functions_sa_roles" {
   ])
   project = var.project_id
   role    = each.key
-  member  = "serviceAccount:pilotlogai-cloud-api@pilotlogai.iam.gserviceaccount.com"
+  member  = "serviceAccount:395510094695-compute@developer.gserviceaccount.com"
 }
 
 # Example: Assign required roles to Cloud Build Service Account
@@ -44,5 +44,5 @@ resource "google_project_iam_member" "cloud_build_sa_roles" {
   ])
   project = var.project_id
   role    = each.key
-  member  = "serviceAccount:cloud-build-sa@pilotlogai.iam.gserviceaccount.com"
+  member  = "serviceAccount:395510094695-compute@developer.gserviceaccount.com"
 } 
