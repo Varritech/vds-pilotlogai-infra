@@ -7,19 +7,6 @@ module "artifact_registry" {
   format        = var.artifact_registry_format
 }
 
-module "cloudfunctions" {
-  source                = "../../modules/cloudfunctions"
-  project_id            = var.project_id
-  region                = var.region
-  function_names        = var.function_names
-  function_entry_points = var.function_entry_points
-  runtime               = var.function_runtime
-  source_bucket         = var.functions_source_bucket
-  source_object         = var.functions_source_object
-  service_account_email = var.cloud_functions_sa
-  vpc_connector         = var.vpc_connector
-}
-
 # Assign required roles to Cloud Functions Runtime Service Account
 resource "google_project_iam_member" "cloud_functions_sa_roles" {
   for_each = toset([
@@ -45,4 +32,10 @@ resource "google_project_iam_member" "cloud_build_sa_roles" {
   project = var.project_id
   role    = each.key
   member  = "serviceAccount:395510094695-compute@developer.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "firestore_access" {
+  project = var.project_id
+  role    = "roles/datastore.user"
+  member  = "serviceAccount:${var.cloud_functions_sa}"
 } 

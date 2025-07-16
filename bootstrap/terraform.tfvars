@@ -10,6 +10,7 @@ api_services            = [
   "artifactregistry.googleapis.com",
   "cloudfunctions.googleapis.com",
   "storage.googleapis.com",
-  "monitoring.googleapis.com"
+  "monitoring.googleapis.com",
+  "firestore.googleapis.com"
 ]
 bootstrap_service_account = "bootstrap-sa@my-firebase-project.iam.gserviceaccount.com" 

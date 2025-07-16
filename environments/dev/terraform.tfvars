@@ -1,6 +1,6 @@
 project_id              = "pilotlogai"
 location                = "us"
-region                  = "us-central1"
+region                  = "eur3"
 artifact_registry_name  = "gcf-artifacts"
 artifact_registry_format = "docker"
 function_names          = ["api", "myFunction"]
